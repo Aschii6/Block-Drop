@@ -11,6 +11,15 @@ config_version=5
 [application]
 
 config/name="Two Player Block Drop"
-run/main_scene="res://scenes/screens/start_screen/start_screen.tscn"
+run/main_scene="res://scenes/screens/title_screen/title_screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://common_assets/icon.svg"
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

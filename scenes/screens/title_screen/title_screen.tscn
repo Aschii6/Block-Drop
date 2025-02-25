@@ -1,0 +1,102 @@
+[gd_scene load_steps=6 format=3 uid="uid://uyrjjklhxgq6"]
+
+[ext_resource type="Theme" uid="uid://cvlwb4ih341k4" path="res://themes/button_theme.tres" id="1_20bi0"]
+[ext_resource type="FontFile" uid="uid://c57ehop5l3rba" path="res://common_assets/fonts/JetBrainsMono-Regular.ttf" id="1_m42vk"]
+
+[sub_resource type="Animation" id="Animation_eqyl3"]
+resource_name = "title_label_animation"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 0, 1), Color(0, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j3vhe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ts0qg"]
+_data = {
+"RESET": SubResource("Animation_j3vhe"),
+"title_label_animation": SubResource("Animation_eqyl3")
+}
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.52549, 0.45098, 0.631373, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -222.0
+offset_right = 244.0
+offset_bottom = 222.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_m42vk")
+theme_override_font_sizes/font_size = 90
+text = "Block
+Drop"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer"]
+libraries = {
+"": SubResource("AnimationLibrary_ts0qg")
+}
+autoplay = "title_label_animation"
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_20bi0")
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_20bi0")
+text = "Quit"
