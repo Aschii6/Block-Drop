@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuf3t5dl0byah"]
+[gd_scene load_steps=5 format=3 uid="uid://cuf3t5dl0byah"]
 
 [ext_resource type="FontFile" uid="uid://c57ehop5l3rba" path="res://common_assets/fonts/JetBrainsMono-Regular.ttf" id="1_hmsmr"]
+[ext_resource type="PackedScene" uid="uid://dodrwf7pt5lxk" path="res://scenes/player/player.tscn" id="2_t3hke"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5k3r8"]
+size = Vector2(2000, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlf3k"]
+size = Vector2(80, 1300)
 
 [node name="PlayScreen" type="Node2D"]
 
@@ -46,3 +53,31 @@ size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("1_hmsmr")
 theme_override_font_sizes/font_size = 50
 text = "Player2: 0"
+
+[node name="Player1" parent="." instance=ExtResource("2_t3hke")]
+position = Vector2(100, 500)
+
+[node name="Player2" parent="." instance=ExtResource("2_t3hke")]
+position = Vector2(1500, 700)
+player_number = 2
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="Bottom" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Bottom"]
+position = Vector2(800, 940)
+shape = SubResource("RectangleShape2D_5k3r8")
+
+[node name="Left" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Left"]
+position = Vector2(-40, 300)
+shape = SubResource("RectangleShape2D_nlf3k")
+
+[node name="Right" type="StaticBody2D" parent="Borders"]
+position = Vector2(1680, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Right"]
+position = Vector2(-40, 300)
+shape = SubResource("RectangleShape2D_nlf3k")

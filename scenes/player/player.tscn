@@ -1,3 +1,45 @@
-[gd_scene format=3 uid="uid://dodrwf7pt5lxk"]
+[gd_scene load_steps=7 format=3 uid="uid://dodrwf7pt5lxk"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_68rsf"]
+[ext_resource type="Texture2D" uid="uid://b0ccpw3tkwxuh" path="res://scenes/player/assets/blue_body_squircle.png" id="2_rsqka"]
+[ext_resource type="Texture2D" uid="uid://cxhktpwxuthvu" path="res://scenes/player/assets/face_a.png" id="3_8rl1u"]
+[ext_resource type="Texture2D" uid="uid://dfh50md5nb75a" path="res://scenes/player/assets/blue_hand_thumb.png" id="4_kexgl"]
+[ext_resource type="Texture2D" uid="uid://lxhithbyro7d" path="res://scenes/player/assets/blue_hand_closed.png" id="5_urruv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bsw1w"]
+size = Vector2(80, 80)
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_68rsf")
+
+[node name="Sprite" type="Node2D" parent="."]
+
+[node name="Body" type="Sprite2D" parent="Sprite"]
+texture = ExtResource("2_rsqka")
+
+[node name="Eyes" type="Sprite2D" parent="Sprite"]
+texture = ExtResource("3_8rl1u")
+
+[node name="ThumbsUp" type="Sprite2D" parent="Sprite"]
+visible = false
+position = Vector2(60, 0)
+texture = ExtResource("4_kexgl")
+
+[node name="AngryFists" type="Node2D" parent="Sprite"]
+visible = false
+
+[node name="LeftFist" type="Sprite2D" parent="Sprite/AngryFists"]
+position = Vector2(-60, 20)
+rotation = -1.0472
+scale = Vector2(-1, 1)
+texture = ExtResource("5_urruv")
+
+[node name="RightFist" type="Sprite2D" parent="Sprite/AngryFists"]
+position = Vector2(60, 20)
+rotation = 1.0472
+texture = ExtResource("5_urruv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_bsw1w")

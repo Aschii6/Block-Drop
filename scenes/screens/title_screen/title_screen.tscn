@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://uyrjjklhxgq6"]
+[gd_scene load_steps=7 format=3 uid="uid://uyrjjklhxgq6"]
 
 [ext_resource type="Theme" uid="uid://cvlwb4ih341k4" path="res://themes/button_theme.tres" id="1_20bi0"]
+[ext_resource type="Script" path="res://scenes/screens/title_screen/title_screen.gd" id="1_iyh4q"]
 [ext_resource type="FontFile" uid="uid://c57ehop5l3rba" path="res://common_assets/fonts/JetBrainsMono-Regular.ttf" id="1_m42vk"]
 
 [sub_resource type="Animation" id="Animation_j3vhe"]
@@ -48,6 +49,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_iyh4q")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -100,3 +102,6 @@ text = "Start"
 layout_mode = 2
 theme = ExtResource("1_20bi0")
 text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
