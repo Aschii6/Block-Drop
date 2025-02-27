@@ -20,7 +20,7 @@ const FACE_HAPPY = preload("res://scenes/player/assets/face_h.png")
 enum State {NORMAL, HAPPY, ANGRY}
 
 const SPEED = 400.0
-const JUMP_VELOCITY = -600.0
+const JUMP_VELOCITY = -800.0
 
 var jump: String
 var left: String

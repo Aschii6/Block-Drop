@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://lxhithbyro7d" path="res://scenes/player/assets/blue_hand_closed.png" id="5_urruv"]
 [ext_resource type="FontFile" uid="uid://c57ehop5l3rba" path="res://common_assets/fonts/JetBrainsMono-Regular.ttf" id="6_ovne8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bsw1w"]
-size = Vector2(80, 80)
+[sub_resource type="CircleShape2D" id="CircleShape2D_nub6g"]
+radius = 40.0222
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_80xyu"]
 radius = 40.0
@@ -46,6 +46,7 @@ rotation = 1.0472
 texture = ExtResource("5_urruv")
 
 [node name="Label" type="Label" parent="Sprite"]
+z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -57,15 +58,16 @@ offset_right = 9.5
 offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_ovne8")
 theme_override_font_sizes/font_size = 20
 text = "P1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("RectangleShape2D_bsw1w")
+shape = SubResource("CircleShape2D_nub6g")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_80xyu")
