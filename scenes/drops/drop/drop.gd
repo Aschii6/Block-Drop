@@ -22,4 +22,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if player.is_in_group("players"):
 		var player_instance: Player = player as Player
 		if player_instance:
+			Events.drop_touched.emit(player_instance.player_number, points)
 			queue_free()
