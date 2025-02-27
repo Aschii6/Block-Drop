@@ -5,6 +5,7 @@ extends Node2D
 @onready var area_2d: Area2D = $Area2D
 
 @export var points: int = 1
+@export var speed: int = 200
 
 func _ready() -> void:
 	visible_on_screen_notifier_2d.screen_exited.connect(func():
