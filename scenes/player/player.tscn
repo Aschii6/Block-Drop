@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dodrwf7pt5lxk"]
+[gd_scene load_steps=9 format=3 uid="uid://dodrwf7pt5lxk"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_68rsf"]
 [ext_resource type="Texture2D" uid="uid://b0ccpw3tkwxuh" path="res://scenes/player/assets/blue_body_squircle.png" id="2_rsqka"]
 [ext_resource type="Texture2D" uid="uid://cxhktpwxuthvu" path="res://scenes/player/assets/face_a.png" id="3_8rl1u"]
 [ext_resource type="Texture2D" uid="uid://dfh50md5nb75a" path="res://scenes/player/assets/blue_hand_thumb.png" id="4_kexgl"]
 [ext_resource type="Texture2D" uid="uid://lxhithbyro7d" path="res://scenes/player/assets/blue_hand_closed.png" id="5_urruv"]
+[ext_resource type="FontFile" uid="uid://c57ehop5l3rba" path="res://common_assets/fonts/JetBrainsMono-Regular.ttf" id="6_ovne8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsw1w"]
 size = Vector2(80, 80)
@@ -44,6 +45,22 @@ position = Vector2(60, 20)
 rotation = 1.0472
 texture = ExtResource("5_urruv")
 
+[node name="Label" type="Label" parent="Sprite"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.5
+offset_top = -75.0
+offset_right = 9.5
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_ovne8")
+theme_override_font_sizes/font_size = 20
+text = "P1"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("RectangleShape2D_bsw1w")
@@ -52,3 +69,6 @@ shape = SubResource("RectangleShape2D_bsw1w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_80xyu")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

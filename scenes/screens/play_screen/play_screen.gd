@@ -35,9 +35,11 @@ func _ready() -> void:
 		if (player_number == 1):
 			player_one_points = max(0, player_one_points + points)
 			player_one_score.text = "Player1: " + str(player_one_points)
+			player_1.drop_touched.emit(points)
 		elif (player_number == 2):
 			player_two_points = max(0, player_two_points + points)
 			player_two_score.text = "Player2: " + str(player_two_points)
+			player_2.drop_touched.emit(points)
 	)
 
 

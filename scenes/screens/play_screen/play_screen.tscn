@@ -29,6 +29,7 @@ grow_vertical = 2
 color = Color(0.592157, 0.737255, 0.384314, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -85,4 +86,5 @@ position = Vector2(-40, 300)
 shape = SubResource("RectangleShape2D_nlf3k")
 
 [node name="DropSpawnTimer" type="Timer" parent="."]
+wait_time = 0.8
 autostart = true
