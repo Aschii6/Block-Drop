@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b13vt0ukve5sy"]
+
+[ext_resource type="PackedScene" uid="uid://c2rkkdf0ssaym" path="res://scenes/drops/drop/drop.tscn" id="1_hvg24"]
+[ext_resource type="Texture2D" uid="uid://128glq04msxm" path="res://scenes/drops/beer/genericItem_color_119.png" id="2_ljnhk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8l1q"]
+size = Vector2(64, 104)
+
+[node name="Beer" instance=ExtResource("1_hvg24")]
+points = 10
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ljnhk")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="1"]
+scale = Vector2(3.2, 5.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_d8l1q")

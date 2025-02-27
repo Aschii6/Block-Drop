@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dodrwf7pt5lxk"]
+[gd_scene load_steps=8 format=3 uid="uid://dodrwf7pt5lxk"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_68rsf"]
 [ext_resource type="Texture2D" uid="uid://b0ccpw3tkwxuh" path="res://scenes/player/assets/blue_body_squircle.png" id="2_rsqka"]
@@ -9,7 +9,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsw1w"]
 size = Vector2(80, 80)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_80xyu"]
+radius = 40.0
+height = 80.0
+
+[node name="Player" type="CharacterBody2D" groups=["players"]]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_68rsf")
 
@@ -43,3 +47,8 @@ texture = ExtResource("5_urruv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("RectangleShape2D_bsw1w")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_80xyu")
