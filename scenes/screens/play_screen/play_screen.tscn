@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuf3t5dl0byah"]
+[gd_scene load_steps=6 format=3 uid="uid://cuf3t5dl0byah"]
 
+[ext_resource type="Script" path="res://scenes/screens/play_screen/play_screen.gd" id="1_eg7w1"]
 [ext_resource type="FontFile" uid="uid://c57ehop5l3rba" path="res://common_assets/fonts/JetBrainsMono-Regular.ttf" id="1_hmsmr"]
 [ext_resource type="PackedScene" uid="uid://dodrwf7pt5lxk" path="res://scenes/player/player.tscn" id="2_t3hke"]
 
@@ -10,6 +11,7 @@ size = Vector2(2000, 80)
 size = Vector2(80, 1300)
 
 [node name="PlayScreen" type="Node2D"]
+script = ExtResource("1_eg7w1")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -81,3 +83,6 @@ position = Vector2(1680, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Right"]
 position = Vector2(-40, 300)
 shape = SubResource("RectangleShape2D_nlf3k")
+
+[node name="DropSpawnTimer" type="Timer" parent="."]
+autostart = true

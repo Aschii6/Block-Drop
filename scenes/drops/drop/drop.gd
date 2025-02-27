@@ -10,12 +10,11 @@ extends Node2D
 func _ready() -> void:
 	visible_on_screen_notifier_2d.screen_exited.connect(func():
 		queue_free()
-		print_debug("Drop Freed")
 	)
 
 
 func _process(delta: float) -> void:
-	pass
+	position.y += speed * delta
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -23,5 +22,4 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if player.is_in_group("players"):
 		var player_instance: Player = player as Player
 		if player_instance:
-			print_debug("Touched by player ", player_instance.player_number)
 			queue_free()
