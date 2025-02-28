@@ -7,4 +7,4 @@ To play the game download the directory or clone the repository and import it in
 This project was made in Godot Version 4.3 .
 
 <br>Game screenshot:<br>
-<img src="https://github.com/user-attachments/assets/44d80d6b-953e-4b4e-afbf-9002521162d0" width=75%>
+<img src="https://github.com/user-attachments/assets/44d80d6b-953e-4b4e-afbf-9002521162d0" alt="Game Screenshot" width=75%>
